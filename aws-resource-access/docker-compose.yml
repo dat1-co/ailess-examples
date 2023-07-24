@@ -1,0 +1,11 @@
+services:
+  ailess-test-project:
+    environment:
+      - PYTHONUNBUFFERED=1
+    image: ailess-test-project:latest
+    build: .
+    platform: linux/amd64
+    ports:
+      - "8080:8080"
+    volumes:
+      - $HOME/.aws/credentials:/root/.aws/credentials:ro
