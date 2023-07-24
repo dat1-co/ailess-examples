@@ -47,7 +47,7 @@ resource "aws_default_vpc" "default_vpc" {
 
 terraform {
   backend "s3" {
-    bucket = "9208342023492-ailess-tf-state"
+    bucket = "000000000000-ailess-tf-state"
     key    = "ailess-test-project-eu-west-1-tf"
     region = "us-east-1"
   }
