@@ -39,8 +39,8 @@ In this case, the entry point is app.py
 ```console
 [?] Where is your entrypoint file located? (e.g. app.py): app.py
 ```
-### Deploy localy
-Run and wait until building and runing finishes
+### Serve locally
+Run and wait until building and running finishes
 ```console
 ailess serve
 ```

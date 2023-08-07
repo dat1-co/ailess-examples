@@ -35,5 +35,9 @@ def getnum():
         print("Image generated")
         return jsonify({"image": image})
 
+@app.route("/", methods=["GET"])
+def root():
+    return jsonify("OK")
+
 if __name__ == "__main__":
     serve(app, host="0.0.0.0", port=8080)
