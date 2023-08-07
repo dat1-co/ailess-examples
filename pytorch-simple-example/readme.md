@@ -48,7 +48,6 @@ To test use test_server.ipynb or test_server.py to get test.png.
 
 When using a GPU, it is recommended to use the latest drivers.
 ### Deploy to AWS
-Make sure that your AWS credentials configured
 Make sure your [AWS credentials are configured correctly](https://github.com/dat1-co/ailess-cli/blob/main/readme.md#accessing-aws-resources) and run
 ```console
 ailess deploy

@@ -16,18 +16,14 @@
 """
 import os
 import time
-from absl import app
-from absl import flags
 import tensorflow as tf
 import tensorflow_datasets as tfds
 from tqdm import tqdm
 
-FLAGS = flags.FLAGS
-
-flags.DEFINE_integer('buffer_size', 10000, 'Shuffle buffer size')
-flags.DEFINE_integer('batch_size', 64, 'Batch Size')
-flags.DEFINE_integer('epochs', 180, 'Number of epochs')
-flags.DEFINE_boolean('enable_function', True, 'Enable Function?')
+buffer_size = 10000
+batch_size = 64
+epochs = 180
+enable_function = True
 
 AUTOTUNE = tf.data.experimental.AUTOTUNE
 
@@ -202,10 +198,9 @@ class Dcgan(object):
     return time_list
 
 
-def run_main(argv):
-  del argv
-  kwargs = {'epochs': FLAGS.epochs, 'enable_function': FLAGS.enable_function,
-            'buffer_size': FLAGS.buffer_size, 'batch_size': FLAGS.batch_size}
+def run_main():
+  kwargs = {'epochs': epochs, 'enable_function': enable_function,
+            'buffer_size': buffer_size, 'batch_size': batch_size}
   main(**kwargs)
 
 
@@ -217,4 +212,4 @@ def main(epochs, enable_function, buffer_size, batch_size):
   return dcgan_obj.train(train_dataset)
 
 if __name__ == '__main__':
-  app.run(run_main)
+  run_main()
